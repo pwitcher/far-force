@@ -20,10 +20,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Matches your local v24.14.0
+          node-version: 24
+          cache: 'npm' # This speeds up your future builds
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Astro outputs to 'dist' by default
 
   deploy:
     needs: build
