@@ -1,20 +1,27 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro site to GitHub Pages
+
 on:
   push:
-    branches: [main] # Or 'master' depending on your default branch
+    branches:
+      - main
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout your repository
         uses: actions/checkout@v4
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        # This action automatically detects npm/pnpm/yarn and runs the build
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
