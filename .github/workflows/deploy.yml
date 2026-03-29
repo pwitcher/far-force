@@ -17,15 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ADD THIS STEP TO FIX THE ERROR:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # This satisfies the Astro 6.0 requirement
+          node-version: 24 # Matches your local v24.14.0
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # The Astro action will now find Node 22 and succeed
 
   deploy:
     needs: build
