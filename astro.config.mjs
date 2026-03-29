@@ -3,8 +3,11 @@ import starlight from '@astrojs/starlight';
 import starlightOpenAPI from 'starlight-openapi'; // 1. Import the plugin
 
 export default defineConfig({
-  site: 'https://pwitcher.github.io', // Replace 'pwitcher' with your actual GH username
-  base: 'https://github.com/pwitcher/far-force',           // Replace with your exact GitHub repository name
+  site: 'https://www.petewitcher-techwriter.com',
+  // If this repo is your "main" username repo (pwitcher.github.io), 
+  // you can leave base blank or use '/'
+  base: '/', 
+  // ... rest of your config
   
   integrations: [
     starlight({
