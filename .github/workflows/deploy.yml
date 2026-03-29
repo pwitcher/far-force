@@ -2,8 +2,7 @@ name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,21 +10,22 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  # This explicitly tells the runner to use Node 24 immediately
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository
-        uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ADD THIS STEP TO FIX THE ERROR:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # This satisfies the Astro 6.0 requirement
 
       - name: Install, build, and upload your site
-        uses: withastro/action@v3 
-        # Note: withastro/action@v3 already defaults to Node 24 
-        # but the environment variable above ensures it.
+        uses: withastro/action@v3
+        # The Astro action will now find Node 22 and succeed
 
   deploy:
     needs: build
