@@ -11,16 +11,21 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # This explicitly tells the runner to use Node 24 immediately
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        # This action automatically detects npm/pnpm/yarn and runs the build
+        uses: withastro/action@v3 
+        # Note: withastro/action@v3 already defaults to Node 24 
+        # but the environment variable above ensures it.
 
   deploy:
     needs: build
