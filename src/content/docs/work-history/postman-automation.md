@@ -3,7 +3,7 @@ title: CI/CD Infrastructure Automation
 description: Using Postman Flows and Webhooks to automate health checks for a publishing pipeline.
 ---
 
-## The Challenge
+## Challenge
 Our documentation publishing pipeline relied on multiple external services (GitHub, Vercel, Atlassian, and Postman). Before every deployment, the manager had to manually verify the status of each service to avoid "broken builds" or deployment hangs. This manual check was repetitive and added a 10-minute bottleneck to every publishing cycle.
 
 ## Solution
