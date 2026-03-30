@@ -17,8 +17,3 @@ I built a technical solution using **Postman Flows** to eliminate this manual fr
 ## The Impact
 * **Efficiency:** Reduced a 10-minute manual process to a **3-second automated check**.
 * **Reliability:** Eliminated "silent failures" caused by downtime in external dependencies.
-* **Tooling Advocacy:** Provided a real-world case study for how the Postman documentation team uses its own product for DevOps automation.
-
-:::tip[Docs Engineer Note]
-This project demonstrates the transition from traditional writing to **Documentation Engineering**, focusing on the infrastructure and automation that supports the content lifecycle.
-:::
