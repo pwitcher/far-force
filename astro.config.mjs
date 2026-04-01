@@ -21,8 +21,12 @@ export default defineConfig({
       ],
 		sidebar: [
 		{
-			label: 'Professional Projects',
+			label: 'Case Studies',
 			autogenerate: { directory: 'work-history' },
+		},
+		{
+			label: 'Writing Samples',
+			autogenerate: { directory: 'writing-samples' },
 		},
 		{
 			label: 'API Reference',
