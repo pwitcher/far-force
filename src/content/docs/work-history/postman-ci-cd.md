@@ -1,12 +1,12 @@
 ---
 title: Working with CI/CD
-description: Triggering the publishing process
+description: Created a personal CI/CD pipeline
 ---
 
 ## Challenge
 
-The Docs team manager who triggered our push-to-prod publishing workflow wanted me to be a backup.
+I wanted to understand how CI/CD could help me achieve my goal of publishing a portfolio website.
 
 ## Solution
 
-Learned and triggered the publishing process with GitHub actions, Gatsby, and Fern. 
+
