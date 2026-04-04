@@ -1,0 +1,29 @@
+---
+title: A simple MCP server
+description: Created an example MCP server using Postman Flows
+
+## Challenge
+
+I wanted to give users a functioning example of an MCP server to demonstrate how they could use Postman Flows to create their own.
+
+## Solution
+
+I copied an example code snippet from an internal demo video and created this example Flow below. You can test the MCP server with this URL:
+
+`https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName`
+
+You can send the first name as a parameter or a JSON object in the request body like this:
+
+`{"first_name": "YourName"}`
+
+Link to the Flow
+`https://www.postman.com/bold-water-164288/my-team-workspace/flow/69d053a4e36adf6c02e4a8ea`
+
+<iframe
+  title="Postman Flows Embed" 
+  width="1200" 
+  height="400" 
+  allowtransparency="true" 
+  style="background: none; border: none; width: 100%; min-height: 800px; display: block;"
+  src="https://flow.pstmn.io/embed/AGwRtcbPz2b1rRtWhVF_4/?theme=dark&frame=true">
+</iframe>
