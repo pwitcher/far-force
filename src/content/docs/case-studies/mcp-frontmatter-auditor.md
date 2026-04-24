@@ -5,11 +5,11 @@ sidebar:
   order: 1
 ---
 
-## The Challenge
-AI agents are excellent at generating content but often fail at adhering to strict technical constraints. In an Astro/Starlight environment, missing frontmatter (like `title` or `description`) causes build failures or SEO degradation.
+## Challenge
+In a CI/CD pipeline, missing frontmatter can cause build failures or SEO degradation.
 
 ## The Solution: MCP Frontmatter Auditor
-I engineered a custom **MCP Server** in TypeScript that allows AI agents to programmatically validate local Markdown files.
+I leveraged an AI agent to create a custom **MCP Server** in TypeScript that allows AI agents to programmatically validate local markdown files.
 
 ### Key Features
 * **Local Filesystem Access:** Securely bridges the gap between the LLM and the local repository.
@@ -17,7 +17,7 @@ I engineered a custom **MCP Server** in TypeScript that allows AI agents to prog
 * **Shift-Left Methodology:** Catches errors during the authoring phase, before they hit CI/CD.
 
 ## Technical Implementation
-The auditor is built as a Node.js server using the `@modelcontextprotocol/sdk`. It implements a tool called `audit_metadata` which handles path normalization and regex-based frontmatter scanning.
+The auditor is built as a Node.js server using `@modelcontextprotocol/sdk`. It implements a tool called `audit_metadata` which handles path normalization and regex-based frontmatter scanning.
 
 ### The Logic
 ```typescript
