@@ -1,10 +1,10 @@
-# Pete Witcher — Portfolio Site
+# Pete Witcher - Portfolio Site
 
 This is my personal portfolio site, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build). It showcases my work as a Senior Technical Writer and Documentation Engineer, including case studies and writing samples.
 
 The site is deployed via a CI/CD pipeline using GitHub Pages.
 
-**Live site:** [pwitcher.github.io/far-force](https://pwitcher.github.io/far-force) *(update with your actual URL)*
+**Live site:** [petewitcher-techwriter.com](https://petewitcher-techwriter.com)
 
 ## What's inside
 
