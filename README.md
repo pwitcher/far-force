@@ -1,49 +1,28 @@
-# Starlight Starter Kit: Basics
+# Pete Witcher — Portfolio Site
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+This is my personal portfolio site, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build). It showcases my work as a Senior Technical Writer and Documentation Engineer, including case studies and writing samples.
 
-```
-npm create astro@latest -- --template starlight
-```
+The site is deployed via a CI/CD pipeline using GitHub Pages.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live site:** [pwitcher.github.io/far-force](https://pwitcher.github.io/far-force) *(update with your actual URL)*
 
-## 🚀 Project Structure
+## What's inside
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+- **Case studies** — real-world documentation engineering projects (Postman automation, MCP servers, and more)
+- **Writing samples** — examples of technical writing across different formats and audiences
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+## Tech stack
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+- [Astro](https://astro.build) + [Starlight](https://starlight.astro.build) for the site framework
+- Markdown / MDX for content
+- GitHub Pages for hosting
+- GitHub Actions for CI/CD deployment
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## Local development
 
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Install dependencies                        |
+| `npm run dev`     | Start local dev server at `localhost:4321`  |
+| `npm run build`   | Build the production site to `./dist/`      |
+| `npm run preview` | Preview the production build locally        |
