@@ -9,7 +9,7 @@ sidebar:
 In a CI/CD pipeline, missing frontmatter can cause build failures or SEO degradation.
 
 ## The Solution: MCP Frontmatter Auditor
-I leveraged an AI agent to create a custom **MCP Server** in TypeScript that allows AI agents to programmatically validate local markdown files.
+I leveraged an AI agent to create a custom **MCP Server** in TypeScript that allow a Claude AI agent to programmatically validate local markdown files.
 
 ### Key Features
 * **Local Filesystem Access:** Securely bridges the gap between the LLM and the local repository.

@@ -11,7 +11,9 @@ I wanted to give users a functioning example of an MCP server to demonstrate how
 
 ## Solution
 
-I copied an example code snippet from an internal demo video and created this example Flow below. You can test the MCP server with this URL:
+I leveraged AI to create an example code snippet for the example Flow below. You can test the MCP server with this URL:
+
+`https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName`
 
 ### Try the Live Webhook
 You can test the live MCP server directly in your browser. Replace `YourName` in the link below:
