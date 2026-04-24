@@ -19,6 +19,7 @@ export default defineConfig({
         ]),
       ],
       sidebar: [
+        { label: 'Home', link: '/' },
         {
           label: 'Case Studies',
           autogenerate: { directory: 'case-studies' },
