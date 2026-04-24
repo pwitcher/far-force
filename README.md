@@ -4,7 +4,7 @@ This is my personal portfolio site, built with [Astro](https://astro.build) and 
 
 The site is deployed via a CI/CD pipeline using GitHub Pages.
 
-**Live site:** [pwitcher.github.io/far-force](https://pwitcher.github.io/far-force) *(update with your actual URL)*
+**Live site:** [petewitcher-techwriter.com](https://petewitcher-techwriter.com)
 
 ## What's inside
 
