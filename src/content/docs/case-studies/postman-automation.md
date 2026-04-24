@@ -1,6 +1,8 @@
 ---
 title: CI/CD Infrastructure Check Automation
 description: Using Postman Flows and Webhooks to automate health checks for a publishing pipeline.
+sidebar:
+  order: 2
 ---
 
 ## Challenge

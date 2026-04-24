@@ -1,41 +1,39 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightOpenAPI from 'starlight-openapi'; // 1. Import the plugin
+import starlightOpenAPI from 'starlight-openapi';
 
 export default defineConfig({
   site: 'https://www.petewitcher-techwriter.com',
-  base: '/', 
-  
+  base: '/',
+
   integrations: [
     starlight({
       title: 'Pete Witcher | Senior Technical Writer and Documentation Engineer',
       plugins: [
-        // 2. Add the plugin configuration
         starlightOpenAPI([
           {
-            base: 'api/songbook', // This will be the URL: /api/songbook/
+            base: 'api/songbook',
             label: 'Songbook API',
-            schema: 'https://api.swaggerhub.com/apis/pwitcher/SongbookApi/1.0.0/swagger.yaml', // Link to your SwaggerHub YAML
+            schema: 'https://api.swaggerhub.com/apis/pwitcher/SongbookApi/1.0.0/swagger.yaml',
           },
         ]),
       ],
-		sidebar: [
-		{
-			label: 'Case Studies',
-			autogenerate: { directory: 'work-history' },
-		},
-		{
-			label: 'Writing Samples',
-			autogenerate: { directory: 'writing-samples' },
-		},
-		{
-			label: 'API Reference',
-			// The 'base' you defined in the plugin config becomes the link
-			items: [
-			{ label: 'Songbook API', link: '/api/songbook/' }, 
-			],
-		},
-		],
+      sidebar: [
+        {
+          label: 'Case Studies',
+          autogenerate: { directory: 'case-studies' },
+        },
+        {
+          label: 'Writing Samples',
+          autogenerate: { directory: 'writing-samples' },
+        },
+        {
+          label: 'API Reference',
+          items: [
+            { label: 'Songbook API', link: '/api/songbook/' },
+          ],
+        },
+      ],
     }),
   ],
 });

@@ -1,6 +1,8 @@
 ---
 title: A simple MCP server
 description: Created an example MCP server using Postman Flows
+sidebar:
+  order: 3
 ---
 
 ## Challenge
