@@ -1,4 +1,4 @@
-# Pete Witcher — Portfolio Site
+# Pete Witcher - Portfolio Site
 
 This is my personal portfolio site, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build). It showcases my work as a Senior Technical Writer and Documentation Engineer, including case studies and writing samples.
 
