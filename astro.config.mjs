@@ -32,8 +32,18 @@ export default defineConfig({
           label: 'API Reference',
           items: [
             { label: 'Overview', link: '/api-docs/' },
-            { label: 'All Songs', link: '/api-docs/operations/getallsongs/' },
-            { label: 'Search', link: '/api-docs/operations/searchsongs/' },
+            { 
+              label: 'All Songs', 
+              link: '/api-docs/operations/getallsongs/' 
+            },
+            { 
+              label: 'Find by Title', 
+              link: '/api-docs/operations/getsongbytitle/' 
+            },
+            { 
+              label: 'Advanced Search', 
+              link: '/api-docs/operations/searchsongs/' 
+            },
           ],
         },
       ],
