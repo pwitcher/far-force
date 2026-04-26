@@ -21,34 +21,34 @@ export default defineConfig({
       sidebar: [
         { label: 'Home', link: '/' },
         {
-          label: 'Case Studies',
+          label: 'Case studies',
           autogenerate: { directory: 'case-studies' },
         },
         {
-          label: 'Writing Samples',
+          label: 'Writing samples',
           autogenerate: { directory: 'writing-samples' },
         },
         {
-          label: 'API Reference',
+          label: 'API reference',
           items: [
-            { 
-              label: 'Overview', link: '/api-docs/' 
+            {
+              label: 'Overview', link: '/api-docs/'
             },
-            { 
-              label: 'View Source (GitHub)', 
-              link: 'https://github.com/pwitcher/songlistApi' 
+            {
+              label: 'View source (GitHub)',
+              link: 'https://github.com/pwitcher/songlistApi'
             },
-            { 
-              label: 'All Songs', 
-              link: '/api-docs/operations/getallsongs/' 
+            {
+              label: 'All songs',
+              link: '/api-docs/operations/getallsongs/'
             },
-            { 
-              label: 'Find by Title', 
-              link: '/api-docs/operations/getsongbytitle/' 
+            {
+              label: 'Find by title',
+              link: '/api-docs/operations/getsongbytitle/'
             },
-            { 
-              label: 'Advanced Search', 
-              link: '/api-docs/operations/searchsongs/' 
+            {
+              label: 'Advanced search',
+              link: '/api-docs/operations/searchsongs/'
             },
           ],
         },
