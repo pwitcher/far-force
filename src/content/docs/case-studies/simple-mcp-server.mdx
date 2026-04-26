@@ -1,36 +1,58 @@
 ---
-title: A simple MCP server
+title: Low-code MCP server
 description: Created an example MCP server using Postman Flows
 sidebar:
   order: 3
 ---
 
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
 ## Challenge
 
-I wanted to give users a functioning example of an MCP server to demonstrate how they could use Postman Flows to create their own.
+Postman Flows is a low-code visual editor that lets users build logic using connected blocks instead of writing code. I wanted to show users that they could use it to create a working MCP server.
 
 ## Solution
 
-I leveraged AI to create an example code snippet for the example Flow below. You can test the MCP server with this URL:
+I designed and built an example MCP server using Postman Flows that demonstrates the full request-response cycle. To create the server logic, I used AI to generate a compliant implementation based on the MCP standard, then wired it into a Flow that any user can inspect, fork, and adapt.
 
-`https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName`
+### Try the Live Webhook
+You can test the MCP server response directly. The flow accepts a `first_name` value and returns a personalized greeting.
 
-### Try the live webhook
-You can test the live MCP server directly in your browser. Replace `YourName` in the link below:
+[👉 **Quick Test: Hello, YourName!**](https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName)
 
-[👉 Click to test: Hello, YourName!](https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName)
+<Aside type="note">
+  **Technical Note:** If you see an empty greeting on your first click, please refresh the page. This is due to a "cold start" latency where the cloud-hosted flow initializes before the URL parameters are fully processed.
+</Aside>
 
-You can send the first name as a parameter or as a JSON object in the request body like this:
+#### Request Details
+Choose your preferred method to see how the payload is handled:
 
-`{"first_name": "YourName"}`
+<Tabs>
+  <TabItem label="URL Parameter" icon="external">
+    **Method:** `GET`  
+    Modify the `first_name` value directly in the browser address bar.
 
-[Link to the flow in Postman](https://www.postman.com/bold-water-164288/my-team-workspace/flow/69d053a4e36adf6c02e4a8ea)
+    ```https
+    [https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName](https://tokenizer-stars-escape.flows.pstmn.io/api/default/example-mcp-server?first_name=YourName)
+    ```
+  </TabItem>
+  <TabItem label="JSON Body" icon="code">
+    **Method:** `POST`  
+    Pass the name as a JSON object in the request body (ideal for programmatic testing).
 
-<iframe
-  title="Postman Flows Embed" 
-  width="1200" 
-  height="400" 
-  allowtransparency="true" 
-  style="background: none; border: none; width: 100%; min-height: 800px; display: block;"
-  src="https://flow.pstmn.io/embed/AGwRtcbPz2b1rRtWhVF_4/?theme=dark&frame=true">
-</iframe>
+    ```json
+    {
+      "first_name": "YourName"
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+[View the flow in Postman](https://www.postman.com/bold-water-164288/my-team-workspace/flow/69d053a4e36adf6c02e4a8ea)
+
+---
+
+## Documentation
+
+This case study is based on a doc I wrote for the Postman Learning Center.  
+[View the PDF](https://drive.google.com/file/d/1HVCGgEpouWCDUpmmavkZDagYcRmM4Gsf/view?usp=drive_link) | [Live link](https://learning.postman.com/docs/postman-ai/mcp-server-flows/create-mcp-server-flow)

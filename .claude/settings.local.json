@@ -4,7 +4,8 @@
       "Bash(git branch *)",
       "Bash(git push *)",
       "Bash(gh repo *)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "WebFetch(domain:learning.postman.com)"
     ]
   }
 }
