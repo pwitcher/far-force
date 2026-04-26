@@ -31,7 +31,13 @@ export default defineConfig({
         {
           label: 'API Reference',
           items: [
-            { label: 'Overview', link: '/api-docs/' },
+            { 
+              label: 'Overview', link: '/api-docs/' 
+            },
+            { 
+              label: 'View Source (GitHub)', 
+              link: 'https://github.com/pwitcher/songlistApi' 
+            },
             { 
               label: 'All Songs', 
               link: '/api-docs/operations/getallsongs/' 
