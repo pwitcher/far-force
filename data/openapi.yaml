@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  version: 2.0.0
+  title: Pete's Songbook API
+  description: "An API of performance repertoire. Enhanced with multi-leveled musical metadata."
+  contact:
+    name: Pete Witcher
+    email: pete.witcher@gmail.com
+servers:
+  - url: https://intense-garden-21213.herokuapp.com/api/v1/resources/songs
+    description: Production server
+paths:
+  /all:
+    get:
+      summary: "Get all songs"
+      operationId: getAllSongs # Added this for the Postman Generator
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/songResponse'
+components:
+  schemas:
+    songResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        artist:
+          type: string
+        decade:
+          type: string
+        genre:
+          type: string
+        musical_metadata:
+          type: object
+          properties:
+            key:
+              type: string
+            tempo:
+              type: string
+              enum: [slow, medium, fast]

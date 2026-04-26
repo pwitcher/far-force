@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/github/songlistApi/songlist.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="883"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainsonglist"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">-- 1. Accurate data for your heavy hitters
+UPDATE songlist SET key = 'E', tempo = 'fast' WHERE title = 'Folsom Prison Blues';
+UPDATE songlist SET key = 'G', tempo = 'fast' WHERE title = 'Ring of Fire';
+UPDATE songlist SET key = 'Bm', tempo = 'slow' WHERE title = 'Comfortably Numb';
+UPDATE songlist SET key = 'D', tempo = 'medium' WHERE title = 'A Life of Illusion';
+
+-- 2. Smart defaults based on your genre labels
+UPDATE songlist SET key = 'G', tempo = 'medium' WHERE genre = 'Country' AND key IS NULL;
+UPDATE songlist SET key = 'A', tempo = 'medium' WHERE genre = 'Classic Rock' AND key IS NULL;
+UPDATE songlist SET key = 'C', tempo = 'slow' WHERE genre = 'Folk' AND key IS NULL;
+
+-- 3. Final catch-all so nothing stays 'null'
+UPDATE songlist SET key = 'G', tempo = 'medium' WHERE key IS NULL;</sql><current_tab id="0"/></tab_sql></sqlb_project>
