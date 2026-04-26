@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git branch *)",
       "Bash(git push *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "Bash(git mv *)"
     ]
   }
 }
