@@ -12,9 +12,9 @@ export default defineConfig({
       plugins: [
         starlightOpenAPI([
           {
-            base: 'api/songbook',
+            base: 'api-docs',
             label: 'Songbook API',
-            schema: 'https://api.swaggerhub.com/apis/pwitcher/SongbookApi/1.0.0/swagger.yaml',
+            schema: './openapi.yaml', 
           },
         ]),
       ],
@@ -31,7 +31,9 @@ export default defineConfig({
         {
           label: 'API Reference',
           items: [
-            { label: 'Songbook API', link: '/api/songbook/' },
+            { label: 'Overview', link: '/api-docs/' },
+            { label: 'All Songs', link: '/api-docs/operations/getallsongs/' },
+            { label: 'Search', link: '/api-docs/operations/searchsongs/' },
           ],
         },
       ],
