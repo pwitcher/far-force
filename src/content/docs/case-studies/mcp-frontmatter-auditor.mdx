@@ -1,5 +1,5 @@
 ---
-title: My AI-Agentic Quality Gate
+title: My AI-agentic quality gate
 description: How I used the Model Context Protocol (MCP) to automate metadata validation in a Docs-as-Code workflow.
 sidebar:
   order: 1
@@ -10,18 +10,18 @@ import { LinkCard, Card } from '@astrojs/starlight/components';
 ## Challenge
 In a CI/CD pipeline, missing frontmatter can cause build failures or SEO degradation. Human writers and LLMs can sometimes forget to include or properly format all required frontmatter fields.
 
-## The Solution: MCP Frontmatter Auditor
+## The solution: MCP frontmatter auditor
 I used Claude Code to create a custom **MCP Server** in TypeScript that allows a Claude AI agent to programmatically validate local markdown files. In this example, the MCP server looks for two fields: `title:` and `description:`. If the frontmatter is missing one or both fields, the MCP server returns a structured error message to the AI agent.
 
-### Key Features
+### Key features
 * **Local Filesystem Access:** Securely bridges the gap between the LLM and the local repository.
 * **Automated Metadata Audits:** Instantly identifies missing required YAML fields.
 * **Shift-Left Methodology:** Catches errors during the authoring phase, before they hit CI/CD.
 
-## Technical Implementation
+## Technical implementation
 The auditor is built as a Node.js server using `@modelcontextprotocol/sdk`. It implements a tool called `audit_metadata` which handles path normalization and regex-based frontmatter scanning.
 
-### The Logic
+### The logic
 ```typescript
 // Example of the validation logic I implemented
 const hasTitle = content.includes("title:");
