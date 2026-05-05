@@ -21,15 +21,21 @@ export default defineConfig({
       sidebar: [
         { label: 'Home', link: '/' },
         {
-          label: 'Case studies',
-          autogenerate: { directory: 'case-studies' },
-        },
-        {
           label: 'Writing samples',
           autogenerate: { directory: 'writing-samples' },
         },
         {
-          label: 'API reference',
+          label: 'Skill examples',
+          items: [
+            { label: 'Overview', link: '/skill-examples/skill-examples-overview/' },
+            { slug: 'skill-examples/mcp-frontmatter-auditor' },
+            { slug: 'skill-examples/postman-automation' },
+            { slug: 'skill-examples/simple-mcp-server' },
+            { slug: 'skill-examples/ai-agentic-doc-bridge' },
+          ],
+        },
+        {
+          label: 'API documentation sample',
           items: [
             {
               label: 'Overview', link: '/api-docs/'

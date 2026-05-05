@@ -1,0 +1,56 @@
+---
+title: AI-agentic documentation bridge
+description: Connecting a live smart locker API to an LLM using the Model Context Protocol (MCP).
+sidebar:
+  order: 5
+---
+
+import { LinkCard, Steps, Aside } from '@astrojs/starlight/components';
+
+## Challenge
+Static documentation often lags behind the real-time state of a system. For complex IoT or hardware-integrated systems—like smart lockers—a support agent or AI assistant needs more than just a manual; they need to know the current availability and specific troubleshooting procedures for live errors.
+
+## The solution: MCP documentation bridge
+I built a "Documentation Bridge" using a custom **MCP Server** that exposes both the static documentation and the live API state to an AI agent. This allows an LLM (like Claude) to act as a sophisticated troubleshooter that can "read" the docs and "check" the system status simultaneously.
+
+### Key features
+* **Live System Context:** The AI can query the locker API directly to see real-time availability.
+* **Semantic Retrieval:** The bridge allows the AI to "fetch" specific Markdown files from the Starlight portal to answer user questions.
+* **Unified Interface:** Combines the human-readable portal with an AI-actionable toolset.
+
+## Technical implementation
+The bridge is built with **TypeScript** and the `@modelcontextprotocol/sdk`. It implements a dual-purpose toolset:
+
+<Steps>
+1. **`get_docs`**: Uses the local filesystem to retrieve Markdown content from the Astro/Starlight repository.
+2. **`check_locker_status`**: Executes a fetch request to the local Express API to retrieve live JSON data from the locker system.
+</Steps>
+
+### The logic: Tool registration
+I implemented strict schema validation using **Zod** to ensure the AI agent provides the correct parameters when requesting documentation.
+
+```typescript
+// Example of the tool registration for documentation retrieval
+server.registerTool(
+  "get_docs",
+  {
+    description: "Retrieves official documentation",
+    inputSchema: z.object({
+      docType: z.enum(["concepts", "reference"]),
+      fileName: z.string()
+    })
+  },
+  async ({ docType, fileName }) => {
+    const filePath = path.join(__dirname, `../../portal/src/content/docs/${docType}/${fileName}.md`);
+    const content = await fs.readFile(filePath, "utf-8");
+    return { content: [{ type: "text", text: content }] };
+  }
+);
+```
+
+<LinkCard
+  title="Examine the Source"
+  description="View the complete Locker API repository, including the Starlight portal, the Express backend, and the MCP server bridge implementation."
+  href="https://github.com/pwitcher/locker-api"
+  icon="github"
+/>
