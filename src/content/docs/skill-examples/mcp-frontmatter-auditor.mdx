@@ -11,7 +11,7 @@ import { LinkCard, Card } from '@astrojs/starlight/components';
 In a CI/CD pipeline, missing frontmatter can cause build failures or SEO degradation. Human writers and LLMs can sometimes forget to include or properly format all required frontmatter fields.
 
 ## Solution
-I used Claude Code to create a custom **MCP Server** in TypeScript that allows a Claude AI agent to programmatically validate local markdown files. In this example, the MCP server looks for two fields: `title:` and `description:`. If the frontmatter is missing one or both fields, the MCP server returns a structured error message to the AI agent.
+I used Claude Code to create a custom **MCP Server** in TypeScript that allows a Claude AI agent to programmatically validate local Markdown files. In this example, the MCP server looks for two fields: `title:` and `description:`. If the frontmatter is missing one or both fields, the MCP server returns a structured error message to the AI agent.
 
 ### Key features
 * **Local Filesystem Access:** Securely bridges the gap between the LLM and the local repository.
