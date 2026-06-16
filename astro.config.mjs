@@ -20,16 +20,11 @@ export default defineConfig({
       ],
       sidebar: [
         { label: 'Home', link: '/' },
-        {
-          label: 'Writing samples',
-          autogenerate: { directory: 'writing-samples' },
-        },
-        {
-          label: 'Skill examples',
-          items: [
-            { label: 'Overview', link: '/skill-examples/skill-examples-overview/' },
-          ],
-        },
+        
+        // Converted to flat, top-level links
+        { label: 'Writing samples', link: '/writing-samples/' },
+        { label: 'Skill examples', link: '/skill-examples/skill-examples-overview/' },
+        
         {
           label: 'API documentation sample',
           items: [
