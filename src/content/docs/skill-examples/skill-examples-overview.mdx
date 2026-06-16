@@ -9,21 +9,21 @@ My [writing ability](/writing-samples/writing-samples/) is a subset of what I do
 
 ## CI code sample validator
 
-* [GitHub Action](https://github.com/pwitcher/locker-api/blob/main/.github/workflows/validate-docs.yml)
-* [Github Action run logs](https://github.com/pwitcher/locker-api/actions)
+* [GitHub Action YAML](https://github.com/pwitcher/locker-api/blob/main/.github/workflows/validate-docs.yml)
+* [GitHub Action run logs](https://github.com/pwitcher/locker-api/actions)
 
 I created a GitHub Action that validates code samples in committed Markdown files to reduce "documentaion rot". On every commit, the Action extracts any inline JavaScript code samples from the committed Markdown files and tests the code samples against a live background instance of the API. The GitHub build/deployment fails on any exit code other than `0`.
 
 ## MCP Markdown server
 
-* [Github repo](https://github.com/pwitcher/mcp-markdown-server)
+* [GitHub repo](https://github.com/pwitcher/mcp-markdown-server)
 * [Readme](https://github.com/pwitcher/mcp-markdown-server/blob/main/README.md)
 
 In this example project I created an MCP server that enables Claude Desktop to parse and query Markdown files in a local directory. It demonstrates my understanding of MCP servers and how MCP provides an interface for LLM applications to parse, query, and audit Markdown documents. Hypothetically, this could be extended to audit Markdown files for SEO keywords, style guide violations, and sensitive data like API keys. I worked with Claude Code and Claude Desktop to create this.
 
 ## This website
 
-* [Github repo](https://github.com/pwitcher/far-force)
+* [GitHub repo](https://github.com/pwitcher/far-force)
 * [Readme](https://github.com/pwitcher/far-force/blob/main/README.md)
 
-I built www.petewitcher-techwriter.com using [Astro](https://astro.build) and the [Starlight](https://starlight.astro.build) documentation framework, writing Markdown and MDX in VSC. I decided to host the site on GitHub Pages with a GitHub Actions CI/CD pipeline. I automated the pipeline so every push to the main branch builds and publishes the latest version. This project demonstrates my documentation engineer skills, like managing a docs-as-code workflow and configuring an automated build-and-deploy pipeline. I worked with Claude Code to configure the Astro site and the GitHub Action.
+I built www.petewitcher-techwriter.com using the [Astro](https://astro.build) web framework and the [Starlight](https://starlight.astro.build) documentation framework, writing Markdown and MDX in VSC. I host the site with GitHub Pages and deploy it with GitHub Actions. The CI/CD pipeline automatically publishes the latest version of the site on every successful commit. I worked with Claude Code to configure the Astro site and the GitHub Action.
