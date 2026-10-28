@@ -1,0 +1,44 @@
+---
+// Standalone API reference page for Pete's Songbook API, rendered by Scalar
+// from the committed OpenAPI spec at /public/openapi.yaml. Lives outside the
+// Starlight collection on purpose — it's a self-contained reference UI, not
+// a prose doc page.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pete's Songbook API Reference</title>
+    <meta
+      name="description"
+      content="Interactive API reference for Pete's Songbook API, generated from its OpenAPI spec."
+    />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <a
+      href="/skill-examples/skill-examples-overview/"
+      style="position:fixed;top:12px;left:16px;z-index:10000;font:13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#9ca3af;text-decoration:none;background:#1a1a1a;padding:6px 12px;border-radius:6px;border:1px solid #2a2a2a;"
+      >&larr; Back to portfolio</a
+    >
+
+    <script
+      id="api-reference"
+      type="application/json"
+      data-url="/openapi.yaml"
+      data-configuration={JSON.stringify({
+        theme: 'purple',
+        layout: 'modern',
+        darkMode: true,
+        hideClientButton: false,
+        metaData: {
+          title: "Pete's Songbook API Reference",
+          description:
+            'Interactive, auto-generated reference for a live performance repertoire API.',
+        },
+      })}></script>
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+  </body>
+</html>
