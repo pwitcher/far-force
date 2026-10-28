@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 2.2.0
+  version: 2.3.0
   title: Pete's Songbook API
   description: |
     A curated API for managing and exploring a live performance repertoire, enriched with multi-leveled musical metadata.
@@ -41,22 +41,30 @@ paths:
     get:
       tags: [Repertoire Retrieval]
       summary: "Find a song by title"
-      description: "Search the repertoire for a song that matches the provided title. Returns a single matching song object if found."
+      description: "Search the repertoire for a song that matches the provided title. Matching is exact and case-sensitive — \"Tennessee Whiskey\" matches, \"tennessee whiskey\" does not."
       operationId: getSongByTitle
       parameters:
         - name: title
           in: query
-          description: "The exact or partial title of the song to search for. Case-insensitive matching is applied."
+          description: "The exact, case-sensitive title of the song to search for."
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: "A single song object matching the provided title, including all associated metadata."
+          description: "A JSON array containing the matching song, each with full metadata. Returns an empty array if no song matches the given title."
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/songResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/songResponse'
+        '404':
+          description: "The required `title` query parameter was omitted."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse'
 
   /artist:
     get:
@@ -80,6 +88,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/songResponse'
+        '404':
+          description: "The `artist` query parameter was omitted, or no songs matched the given artist."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse'
 
   /search:
     get:
@@ -106,29 +120,44 @@ paths:
             enum: [slow, medium, fast]
       responses:
         '200':
-          description: "A JSON array of songs matching all provided filter criteria, each with full metadata."
+          description: "A JSON array of songs matching all provided filter criteria, each with full metadata. Returns an empty array if no song matches."
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/songResponse'
+        '404':
+          description: "No filter parameters were provided. At least one of `genre`, `key`, or `tempo` is required."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse'
 
 components:
   schemas:
+    errorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "No results match your request."
+
     songResponse:
       type: object
       properties:
-        id:
-          type: integer
         title:
           type: string
+          example: "Tennessee Whiskey"
         artist:
           type: string
+          example: "Chris Stapleton"
         decade:
           type: string
+          example: "2010s"
         genre:
           type: string
+          example: "Alt Country"
         musical_metadata:
           type: object
           description: "A collection of performance-specific musical attributes that describe how the song is played live, including key and tempo."
@@ -136,7 +165,9 @@ components:
             key:
               type: string
               description: "The musical key in which the song is performed (e.g. G major, E minor). Useful for transposition and harmonic planning."
+              example: "G"
             tempo:
               type: string
               description: "The general tempo or energy feel of the performance. One of: slow, medium, or fast."
               enum: [slow, medium, fast]
+              example: "medium"
